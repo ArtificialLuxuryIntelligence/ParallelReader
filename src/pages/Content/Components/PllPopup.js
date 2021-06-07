@@ -21,7 +21,6 @@ const PllPopup = React.forwardRef(
     const [lookupButton, setlookupButton] = useState(b2WR(selectionData.lang)); //undefined (falsy) if no WR code exists ==> no lookupbutton
     const [saveButton, setsaveButton] = useState(true);
     const [TTSButton, setTTSButton] = useState(TTSVoice);
-    console.log('voiceroo', TTSVoice);
     //Duplicate of lookupButton for now HOWEVER we may wish to disable the button even if lookup is avail
     const [lookupAvailable, setlookupAvailable] = useState(
       b2WR(selectionData.lang)
