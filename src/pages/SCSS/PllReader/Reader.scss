@@ -1,0 +1,158 @@
+@use "./SCSS/animations.scss";
+@import './../constants.scss';
+
+// TODO : FIND another complementary heading font
+// Note the html format is set in Container component (two ref sections are extracted) and then copied to Reader component
+
+.pll-main {
+  direction: ltr;
+  background-color: $background-gray;
+  width: 100%;
+  height: 100vh;
+  //   padding: 3rem;
+  position: relative;
+  overflow-y: auto;
+  // scrollbar-width: thin;
+  animation: fade-in 0.4s ease-in forwards;
+
+  .controls-cont {
+    display: flex;
+    align-items: flex-start;
+    // flex-wrap: wrap;
+    font-size: 0.9em;
+    // padding: 0.3em;
+    margin-left: 1em;
+    color: lighten($ink, 50%);
+    transition: all 0.3s ease;
+    span {
+      white-space: nowrap;
+    }
+
+    .ttsvoice-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .simple-slider {
+      input {
+        transition: opacity 0.3s ease;
+        opacity: 0.5;
+      }
+    }
+
+    .simple-dropdown,
+    .simple-slider {
+      margin: 0.3em 1em;
+    }
+    &:hover {
+      color: $ink;
+      .simple-slider {
+        input {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  > div {
+    //the layout container
+    // transform: scaleZ(0);
+    will-change: scroll-position; //solves repaint issue (see paint flashing in dev tools ) NOTE!!! if set to transform, this messes with fixed position children
+    top: 1em;
+    background-color: $paper;
+    box-shadow: 0px 0px 5px rgba(7, 7, 7, 0.612);
+  }
+  .flex-container {
+    display: flex;
+    // width: 100%;
+    // height: 100%;
+    min-height: 95vh;
+    justify-content: space-around;
+    padding: 3em;
+
+    // animation: fade-in 0.6s ease-in forwards;
+
+    &.single {
+      .pll-section.original {
+        padding: 0; //todo a bit more responsive
+      }
+      @media screen and (min-width: 1000px) {
+        .pll-section.original {
+          padding: 0 12%; //todo a bit more responsive
+        }
+      }
+
+      .pll-section.translated {
+        margin: 0;
+        flex: 0;
+        opacity: 0;
+        overflow: hidden;
+        max-height: 100vh;
+        > div {
+          width: 40vw;
+          overflow-y: hidden;
+        }
+      }
+    }
+    &.parallel {
+    }
+  }
+
+  footer {
+    background-color: $footer-bg;
+    color: $footer-col;
+
+    #footer__date {
+      color: $brand;
+    }
+    p {
+      text-align: right;
+      padding: 0.8em 3rem; //3rem is same as flex-container
+      margin: 0;
+    }
+  }
+}
+
+.pll-section {
+  // transition: padding 0.5s ease, flex 0.5s ease, opacity 0.3s ease,
+  //   margin 0.5s ease;
+
+  transition: opacity 0.3s ease, margin-top 0.5s ease;
+
+  flex: 1;
+
+  margin: 0 2em;
+  position: relative;
+  overflow: hidden;
+
+  .pll-title {
+    margin-bottom: 2em;
+  }
+  .pll-author {
+  }
+  .pll-date {
+  }
+  .pll-content {
+  }
+}
+
+.pll-sentence,
+.sync-scroll-wrapper {
+  transition: background-color 0.1s ease;
+  display: inline;
+}
+
+.pll-sentence-active {
+  // background-color: rgb(255, 255, 174) !important;
+  background-color: $sentence-active !important;
+  color: $rich-black !important;
+}
+.pll-sentence-parallel {
+  /* color: blue !important; */
+  // background-color: rgb(255, 223, 118) !important;
+  background-color: $sentence-parallel !important;
+
+  color: $rich-black !important;
+  // transform: scale(1.5) !important;
+}
+
+/////////// Animations

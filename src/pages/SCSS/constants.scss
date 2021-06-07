@@ -1,0 +1,112 @@
+/* // ------------------------------------------------------ */
+//  -------------- Colours etc
+/* // ------------------------------------------------------ */
+
+$rich-black-fogra-29: rgba(0, 18, 25, 1);
+$blue-sapphire: rgba(0, 95, 115, 1);
+$viridian-green: rgba(10, 147, 150, 1);
+$middle-blue-green: rgba(148, 210, 189, 1);
+$medium-champagne: rgba(233, 216, 166, 1);
+$gamboge: rgba(238, 155, 0, 1);
+$alloy-orange: rgba(202, 103, 2, 1);
+$mahogany: rgba(187, 62, 3, 1);
+$rufous: rgba(174, 32, 18, 1);
+$ruby-red: rgba(155, 34, 38, 1);
+
+$red-salsa: #f94144ff;
+$orange-red: #f3722cff;
+// $yellow-orange-color-wheel: #f8961eff;
+$mango-tango: #f9844aff;
+$maize-crayola: #f9c74fff;
+$pistachio: #90be6dff;
+$zomp: #43aa8bff;
+$cadet-blue: #4d908eff;
+$queen-blue: #577590ff;
+$cg-blue: #277da1ff;
+
+// $brand: rgb(206, 61, 7);
+// $error: rgb(238, 75, 75);
+// $selectionColor: rgba(255, 68, 0, 0.5);
+
+// $brand: rgba(174, 32, 18, 1);
+// $error: rgba(187, 62, 3, 1);
+// $selectionColor: rgba(155, 34, 38, 0.6);
+
+//striking font
+$rich-black: $rich-black-fogra-29;
+
+$brand: $orange-red;
+// $error: $red-salsa;
+$error: $orange-red;
+$selectionColor: #f9844aff;
+$sentence-parallel: rgba(249, 198, 79, 0.65); //maizcrayola
+$sentence-active: rgba(249, 198, 79, 0.45);
+
+// $sentence-parallel: rgba(238, 155, 0, 0.6);
+// $sentence-active: rgba(233, 216, 166, 0.6);
+
+// $sentence-active: rgba(238, 155, 0, 0.6);
+// $sentence-parallel: rgba(202, 103, 2, 0.6);
+
+$ink: #3e4042;
+$paper: #fefefe;
+$background-gray: #eaeaea;
+// $dropdown-dot: #96adc9;
+$dropdown-dot: $brand;
+
+// Widget
+
+// $widget-color: $brand;
+
+//labels
+$widget-color-inactive: $brand;
+$widget-color-active: $paper;
+$widget-background-inactive: none;
+// $widget-background-active: $cg-blue;
+$widget-background-active: $queen-blue;
+
+// $widget-color-inactive: $queen-blue;
+// $widget-color-active: $brand;
+// $widget-background-inactive: none;
+// $widget-background-active: $queen-blue;
+
+//Popup
+
+$popup-bg: $rich-black;
+// $popup-bg-hover: $ink;
+
+// $popup-bg: $queen-blue;
+// $popup-bg-hover: $cg-blue;
+$popup-bg-hover: $queen-blue;
+
+$popup-col: $paper;
+
+//Pll popup
+$tooltip-bg: #222;
+
+//static pages
+
+// $static-header-bg: rgba(148, 210, 189, 0.5);
+// $static-header-bg: rgba(31, 140, 242, 0.3);
+$static-header-bg: $queen-blue;
+
+// $footer-bg: $static-header-bg;
+$footer-bg: $queen-blue;
+$footer-col: $paper;
+// $static-header-border: hsl(209, 85%, 5%);
+$static-header-col: $queen-blue;
+
+$static-header-border: $cadet-blue;
+$static-header-border: $queen-blue;
+
+//My words
+$entry-icon: $ink;
+$entry-icon: $queen-blue;
+
+// $entry-header-bg: rgba(31, 140, 242, 0.12);
+// $entry-header-bg: $cadet-blue;
+// $entry-header-bg: lighten($queen-blue, 40%);
+
+$entry-header-border: $queen-blue;
+$entry-bg: #fafafa;
+//Shadows

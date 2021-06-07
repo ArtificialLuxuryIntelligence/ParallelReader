@@ -1,0 +1,19 @@
+@import './../constants.scss';
+
+//full page wrapper
+#pll-reader {
+  direction: ltr;
+  transition: background-color, backdrop-filter 0.4s ease;
+  &.waiting {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+  }
+  &.active {
+    // background-color: $background-gray;
+  }
+
+  //inside layout container
+  .pll-reader-content {
+    background-color: $paper;
+  }
+}

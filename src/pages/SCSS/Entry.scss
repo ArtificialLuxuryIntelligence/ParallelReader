@@ -1,0 +1,360 @@
+@import './../SCSS//constants.scss';
+
+$border-rad: 6px;
+
+.entry {
+  position: relative;
+  background-color: $entry-bg;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.1));
+
+  .prohib {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  .error {
+    color: $error;
+    svg {
+      color: $error;
+    }
+  }
+
+  .tooltip {
+    font-size: 17px;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.4;
+    cursor: pointer;
+    visibility: hidden;
+
+    padding: 0.2em 0.5em;
+    background-color: $tooltip-bg;
+    color: #ccc;
+    text-align: center;
+    border-radius: 6px;
+    top: 2.2em;
+    left: 2.5em;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(0.6em);
+    transition: all 0.25s ease;
+    transition-delay: 0s;
+
+    svg {
+      height: 1em;
+      margin-right: 0.3em;
+      // display: inline;
+      // vertical-align: middle;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  h4 {
+    margin: 0.3em 0;
+  }
+  svg {
+    color: $entry-icon;
+    // opacity: 0.8;
+  }
+
+  &.open {
+    z-index: 2;
+    .entry-head {
+      border-bottom: 1px solid $entry-header-border;
+
+      border-radius: $border-rad;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &.closed {
+    .entry-content {
+      box-sizing: border-box;
+      height: 0;
+      padding: 0;
+      overflow-y: hidden;
+    }
+  }
+
+  .icon {
+    font-size: 1.2em;
+  }
+  .collapse-toggle {
+    margin-left: 0;
+    margin-right: 1em;
+    // font-size: 1.2em;
+    // position: absolute;
+    // left: 0;
+    // top: 0;
+  }
+
+  button,
+  input[type='submit'] {
+    position: relative;
+    margin-left: 0.4em;
+    padding: 0.6em;
+    // background-color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.05));
+    &:hover {
+      .tooltip {
+        opacity: 0.9;
+        transform: translateY(0px);
+        visibility: visible;
+        transition-delay: 0.5s;
+        &.error {
+          transition-delay: 0s;
+        }
+      }
+    }
+    &.error:hover {
+      .tooltip {
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  // display type
+  .entry-display {
+    h2 {
+      font-weight: 400;
+
+      cursor: pointer;
+    }
+    .button-container {
+      button:nth-of-type(1) {
+        margin-left: auto;
+      }
+      button {
+        //hack to make tooltips position above next button
+        $n: 20;
+        @for $i from 1 through $n {
+          &:nth-child(#{$i}) {
+            position: relative;
+            z-index: $n -$i;
+          }
+        }
+      }
+    }
+  }
+  .entry-editor {
+    .button-container {
+      button:nth-of-type(1) {
+        margin-left: auto;
+        // margin-right: 2em;
+      }
+    }
+    .entry-content {
+      margin: 0 3%;
+
+      form.edit-entry {
+        display: flex;
+        flex-direction: column;
+        label {
+          margin: 1em 0;
+          //   width: 5rem;
+        }
+        input,
+        textarea {
+          padding: 0.3em;
+          line-height: 1.1;
+          font: inherit;
+          display: block;
+        }
+        input {
+          width: 25ch;
+        }
+
+        textarea {
+          display: block;
+          width: 100%;
+          min-height: 4em;
+          max-width: 100%;
+        }
+        .inline {
+          label {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+            span {
+              margin-right: 1em;
+            }
+          }
+        }
+        input[type='submit'] {
+          //   margin-left: max(600px, 30%);
+          display: inline-block;
+          width: auto;
+          margin-top: auto;
+          margin-bottom: auto;
+          margin-left: auto;
+          //   flex-basis: 1;
+          //   max-width: 4em;
+        }
+      }
+    }
+  }
+
+  .entry-head {
+    // background-color: $entry-bg;
+
+    border-radius: $border-rad;
+
+    padding: 0 1.2em;
+    // border-bottom: 1px solid $entry-header-border;
+    // background-color: $entry-header-bg;
+
+    > span {
+      white-space: nowrap;
+      display: flex;
+      align-items: flex-start;
+      // margin-right: auto;
+      width: auto;
+      * {
+        white-space: normal;
+      }
+      h2 {
+        margin: 0;
+        // margin-right: auto;
+
+        // margin-right: auto;
+        width: 100%;
+        padding: 0.4em;
+      }
+      svg {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &.inline {
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      // width: 100%;
+      margin-left: auto;
+      /* display: ; */
+    }
+  }
+  .entry-content {
+    // background-color: $entry-bg;
+
+    padding: 1.4em 3em;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    // blockquote {
+    //   font-size: 1em;
+    //   // border-left: 2px solid;
+    //   border-left: none;
+    // }
+    h3 {
+      margin-top: 0;
+      font-style: italic;
+    }
+
+    .context-quote {
+      padding: 0.2em 0;
+    }
+  }
+
+  .entry-notes {
+    margin-top: 1.2em;
+    h4 {
+      font-style: italic;
+    }
+  }
+
+  /// More general layout
+  // .entry-notes,
+  // form,
+  // .parallel-container > div {
+  // margin: 0 1.2em;
+  // }
+
+  .parallel-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // gap: 3em;
+    // margin: 2em 0;
+
+    .entry-translation {
+      margin-top: 1em;
+    }
+    > div {
+      //   margin-top;
+      flex: 1;
+    }
+  }
+
+  //helper
+  .inline {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    h2 {
+      display: inline-block;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .entry {
+    .entry-display {
+      h2 {
+        cursor: pointer;
+      }
+      .button-container {
+        button:nth-of-type(2) {
+          margin-right: 2em;
+        }
+        button:nth-of-type(4) {
+          // margin-right: 2em;
+        }
+      }
+    }
+
+    .entry-head {
+      > span {
+        width: 100%;
+      }
+      &.inline {
+        flex-wrap: initial;
+      }
+    }
+
+    .entry-content {
+      margin: 0 6%;
+      .entry-original {
+        margin-right: 4ch;
+        a {
+          display: block;
+          margin-top: 0.8em;
+        }
+      }
+
+      .parallel-container {
+        flex-direction: row;
+        .entry-translation {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

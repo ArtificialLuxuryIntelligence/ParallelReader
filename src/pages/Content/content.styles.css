@@ -1,0 +1,15 @@
+/* Stylesheet injected into page */
+
+.no-scroll {
+  overflow: hidden !important;
+  height: 95vh !important;
+}
+.pll-initial {
+  /* nukes all styles in the page to stop inheritance isssues into shadow dom */
+  all: initial;
+  transition: all none;
+}
+
+#pll-reader-host {
+  flex: 1;
+}

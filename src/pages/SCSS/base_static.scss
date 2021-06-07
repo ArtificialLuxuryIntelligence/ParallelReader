@@ -1,0 +1,130 @@
+@import './constants.scss';
+@import './fonts.scss';
+
+/* // ------------------------------------------------------ */
+/* // ----------------- Standard HTML tag styling */
+// For static pages
+// Note: Lots of duplicate code from base_webcomp.scss [apply relevant changes there]
+
+/* // ------------------------------------------------------ */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: 17px;
+  line-height: 1.55;
+  padding: 0;
+  margin: 0;
+  background-color: $background-gray;
+  color: $ink;
+  ::selection {
+    background-color: $selectionColor;
+  }
+
+  //fancy scrollbar (copied from scrollbar.scss)
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+  &::-webkit-scrollbar-thumb {
+    height: 56px;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    background-color: rgb(155, 155, 155);
+  }
+}
+
+h1,
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.9em;
+  line-height: 1.125;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+hr {
+  height: 1px;
+  background-color: #ddd;
+  border: none;
+  width: 100%;
+  margin: 0px;
+}
+
+a[href],
+a[href]:visited,
+a[href]:hover {
+  color: $cg-blue;
+  text-decoration: none;
+}
+
+a[href]:hover {
+  color: $zomp;
+}
+
+
+
+video,
+img {
+  max-width: 100%;
+}
+figure,
+picture {
+  margin: 1em 0;
+}
+figcaption {
+  font-size: 0.9em;
+  opacity: 0.7;
+  padding: 1em 0.6em;
+}
+
+li {
+  line-height: 1.5;
+  margin-bottom: 0.3em;
+}
+
+td {
+  border: 1px solid black;
+  padding: 0.15em 0.4em;
+}
+
+pre {
+  margin: 0 0.6em;
+  padding: 0.6em;
+  overflow: auto;
+}
+pre,
+code {
+  background-color: #eee;
+}
+
+blockquote {
+  border-left: 4px solid;
+  margin-left: 0;
+  padding: 1em 6ch;
+  margin: 1em 0;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+blockquote > *:first-child {
+  margin-top: 0;
+}
+blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+/* // ------------------------------------------------------
+// ----------------- Sitewide styles
+// ------------------------------------------------------ */

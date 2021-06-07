@@ -1,0 +1,240 @@
+@import './constants.scss';
+
+#pll-widget {
+  z-index: 10000000000;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  color: $ink;
+  position: absolute;
+  right: 1.4em;
+  top: 1.4em;
+  height: 5rem;
+  line-height: 1;
+  display: flex;
+  justify-content: flex-end;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+#pll-widget .pll-widget-content {
+  display: flex;
+  position: fixed;
+  /* //  right:0; */
+  justify-content: flex-end;
+
+  align-items: flex-end;
+  flex-direction: column;
+
+  text-align: right;
+
+  /* border: 1px solid red; */
+}
+
+#pll-widget.closed ul {
+  pointer-events: none;
+  top: 0;
+  opacity: 0;
+}
+#pll-widget .logo,
+#pll-widget .icon {
+  display: grid;
+  place-items: center;
+  //keeps menu in line with logo
+  width: 3.5em;
+}
+
+#pll-widget {
+  .logo {
+    // background-color: rgba(0, 0, 0, 0.3);
+    display: block;
+    z-index: 2;
+
+    font-size: 1em;
+    // padding-top: 1em;
+    margin-bottom: 2em;
+    cursor: pointer;
+    > span {
+      font-size: 2em;
+      border-radius: 50%;
+      // .icon {
+      //   filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.1));
+      // }
+      svg {
+        fill: $brand;
+        // mix-blend-mode: exclusion;
+        // mix-blend-mode: difference;
+
+        // filter: invert(40%);
+        // backdrop-filter: blur(15px);
+        // filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.1));
+
+        g {
+          // isolation: isolate;
+        }
+      }
+    }
+  }
+  ul {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+
+    padding: 0;
+
+    margin: 0;
+
+    list-style: none;
+    transition: all 0.3s ease-out;
+    li {
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.5em 0;
+      line-height: 1;
+      margin: 0;
+      overflow-x: hidden;
+      opacity: 0.9;
+      .label {
+        color: $widget-color-inactive;
+
+        padding: 0.5em;
+
+        text-transform: uppercase;
+        font-weight: 600;
+        display: block;
+        opacity: 0;
+        white-space: nowrap;
+        z-index: 1;
+        border-radius: 6px;
+      }
+      .icon {
+        // color: $brand;
+
+        z-index: 2;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > .icon-cont {
+          // display: grid;
+          // place-items: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color:$widget-color-inactive;
+          background-color: $widget-background-inactive;
+          border-radius: 50%;
+
+          // padding: 0.6em;
+          // margin: 0.25em;
+          // width: 3em;
+          // height: 3em;
+
+          height: 2em;
+          width: 2em;
+          padding: 0.3em;
+          transition: all 0.3s ease;
+        }
+        .menu-icon {
+          // color: darken($brand, 80%);
+        }
+        svg {
+          // width: 3rem;
+          // height: 3rem;
+          path {
+          }
+        }
+      }
+      &:hover {
+        .label {
+          display: block;
+          animation: slide-in ease 0.3s forwards;
+          transition: all 0.3s ease;
+          color: $widget-color-active;
+          background-color: $widget-background-active;
+        }
+        .icon {
+          > .icon-cont {
+          color: $widget-color-active;
+
+
+            background-color: $widget-background-active;
+          }
+        }
+        .label,
+        .icon {
+          filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.1));
+        }
+      }
+    }
+  }
+}
+
+//disabled
+#pll-widget li.disabled {
+  display: none;
+  pointer-events: none;
+  filter: grayscale(0.8) blur(1px);
+}
+
+// #pll-widget li.disabled .label {
+//   display: none;
+// }
+
+//slide in
+#pll-widget .slide-in {
+  animation: slide-in 1s ease 0.3s forwards;
+}
+
+//message
+#pll-widget .message {
+  // pointer-events: none;
+  padding: 0 3em 2em 1em;
+  font-weight: 600;
+  animation: fade-in ease 0.6s forwards;
+}
+#pll-widget .message.error {
+  color: $error;
+}
+
+// ------------------------------------------ Special in Reader.js
+.pll-main {
+  #pll-widget {
+    .pll-widget-content {
+      transition: all 0.3s ease;
+      //filter messes up with the position fixed of the widget some crazy reason [if put in #pll-widget]
+      // filter: opacity(0.9);
+      opacity: 0.5;
+    }
+    &:hover {
+      .pll-widget-content {
+        // filter: opacity(1);
+        opacity: 1;
+      }
+    }
+  }
+}
+// ------------------------------------------ -------
+//animations
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

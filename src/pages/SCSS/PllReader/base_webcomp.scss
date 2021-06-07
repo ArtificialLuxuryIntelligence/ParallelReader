@@ -1,0 +1,123 @@
+@import './../constants.scss';
+@import './../fonts.scss';
+//  ------------------------------------------------------ */
+//  ----------------- Standard HTML tag styling */
+// For web component (only used into shadowdom)
+// Note: Lots of duplicate code from base.scss [apply relevant changes there]
+//  ------------------------------------------------------ */;
+
+#pll-reader {
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: 17px;
+  line-height: 1.55;
+  color: $ink;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  ::selection {
+    // background-color: rgba(255, 68, 0, 0.5);
+    background-color: $selectionColor;
+  }
+
+  h1,
+  h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: 1.9em;
+    line-height: 1.125;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    line-height: 1.5;
+  }
+
+  hr {
+    height: 1px;
+    background-color: #ddd;
+    border: none;
+    width: 100%;
+    margin: 0px;
+  }
+
+  a[href],
+  a[href]:visited,
+  a[href]:hover {
+    color: $cg-blue;
+    text-decoration: none;
+  }
+
+  a[href]:hover {
+    color: $zomp;
+  }
+
+  iframe {
+    width: 100%;
+    max-height: 45vh;
+  }
+  iframe[src*='youtube.com/embed/'] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  video,
+  img {
+    max-width: 100%;
+  }
+  figure,
+  picture {
+    margin: 1em 0;
+  }
+  figcaption {
+    font-size: 0.9em;
+    opacity: 0.7;
+    padding: 1em 0.6em;
+  }
+
+  li {
+    line-height: 1.5;
+    margin-bottom: 0.3em;
+  }
+
+  td {
+    border: 1px solid black;
+    padding: 0.15em 0.4em;
+  }
+
+  pre {
+    margin: 0 0.6em;
+    padding: 0.6em;
+    overflow: auto;
+  }
+  pre,
+  code {
+    background-color: #eee;
+  }
+
+  blockquote {
+    border-left: 4px solid;
+    margin-left: 0;
+    padding: 1em 6ch;
+    margin: 1em 0;
+    font-size: 1.1em;
+    line-height: 1.4;
+  }
+  blockquote > *:first-child {
+    margin-top: 0;
+  }
+  blockquote > *:last-child {
+    margin-bottom: 0;
+  }
+}

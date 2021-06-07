@@ -1,0 +1,75 @@
+@import './constants.scss';
+
+#static-container {
+  background-color: $paper;
+  box-shadow: 0px 0px 5px rgba(7, 7, 7, 0.612);
+
+  #static-content {
+    margin-top: 1em;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 7rem minmax(100vh, auto) auto;
+    position: relative;
+
+    header,
+    footer,
+    #page-content {
+      padding: 0.5em 4.5%;
+    }
+    #page-content {
+      // padding-bottom: 12em;
+    }
+    header {
+      text-transform: capitalize;
+      display: flex;
+      align-items: flex-end;
+
+      color: $paper;
+      // color: $static-header-col;
+      background-color: $static-header-bg;
+      // border-bottom: 0.2em solid $static-header-border;
+      h1 {
+        // padding-left: 2em;
+        font-size: 2.5rem;
+        margin: 0.3em 0;
+        font-weight: 400;
+        // margin-right: 3em;
+        &::after {
+          // left: 0%;
+          // position: absolute;
+          // display: block
+          margin-left: 0.15em;
+          content: '.';
+          color: $brand;
+        }
+      }
+    }
+    footer {
+      text-align: right;
+      padding: 0.4em 1em;
+      color: $footer-col;
+      background-color: $footer-bg;
+      #footer__date {
+        color: $brand;
+      }
+    }
+
+    #page-content {
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #static-container {
+    #static-content {
+      header,
+      footer,
+      #page-content {
+        padding: 0.5em 2em;
+      }
+      #page-content {
+        // padding-bottom: 12em;
+      }
+    }
+  }
+}

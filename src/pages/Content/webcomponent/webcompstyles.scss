@@ -1,0 +1,25 @@
+//This file is compiled to CSS then injected into page
+// The webcomponent in App.js then imports this content in a style tag
+// It's the best solution I could find for SCSS in a webcomponent in a react app in a chrome extension...
+
+// Parallel Reader web comp specific style
+@import './../../SCSS/PllReader/base_webcomp.scss';
+@import './../../SCSS/PllReader/App.scss';
+@import './../../SCSS/PllReader/control-group.scss';
+@import './../../SCSS/PllReader/PllPopup.scss';
+@import './../../SCSS/PllReader/Reader.scss';
+
+@import './../../SCSS/fancyscrollbar.scss';
+
+// General styles
+@import './../../SCSS/WidgetStyles.scss';
+@import './../../SCSS/PllReader/SimpleDropdown.scss'; //shouldnt be in PllReader folder..
+@import './../../SCSS/LayoutContainer.scss';
+// @import 'react-dropdown/style.css';
+
+// @import './../../LayoutContainer/';
+// @import './../../Containers//StaticContainer/';
+
+:host {
+  all: initial;
+}
