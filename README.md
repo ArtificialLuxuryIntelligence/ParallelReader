@@ -36,12 +36,13 @@ Features:
 
 No information about the user is collected at any time. Some actions within the extension, such as saving words, use the local, internal storage of the browser only and is not passed on the me or anyone else.
 
+## Issues / Contributions
+
+If you have any ideas, issues or questions, feel free to open a new issue in this Github repo or use the Chrome Web Store 'Support' tab.
+
 ## Credits
 
 - Check out the dependencies in package.json for a full list of the packages used.
 
 - [This](https://github.com/lxieyang/chrome-extension-boilerplate-react/) resource was modified slightly to initially get the project off the ground.
 
-## Contribute
-
-If you have any ideas, issues or questions, feel free to open a new issue in this Github repo.
