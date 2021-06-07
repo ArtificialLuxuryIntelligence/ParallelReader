@@ -32,9 +32,9 @@ Features:
 
 ![My Words - Google Chrome 02_06_2021 20_24_05 (2)](https://user-images.githubusercontent.com/54374934/120541018-3ccc1e00-c3e1-11eb-98d6-d5d458b5f6d3.png)_Save words and their context to view at a later stage_
 
-## Privacy Statement
+## Privacy Policy
 
-No information about the user is collected at any time. Some actions within the extension, such as saving words, use the local, internal storage of the browser only and is not passed on the me or anyone else.
+No information about the user is collected at any time. Some actions within the extension, such as saving words, use the local, internal storage of the browser only and the data is not passed on to me or anyone else.
 
 ## Issues / Contributions
 
