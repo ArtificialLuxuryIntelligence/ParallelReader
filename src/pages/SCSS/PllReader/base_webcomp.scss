@@ -1,5 +1,12 @@
 @import './../constants.scss';
-@import './../fonts.scss';
+
+// *** removed
+// @import './../fonts.scss';
+// ***
+// now injected into head of document when extension is launched [cf. content/index.js]
+
+// https://stackoverflow.com/questions/55382081/using-google-fonts-with-shadow-dom
+
 //  ------------------------------------------------------ */
 //  ----------------- Standard HTML tag styling */
 // For web component (only used into shadowdom)
